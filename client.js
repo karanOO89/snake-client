@@ -1,4 +1,4 @@
-const net = require('net');
+const net = require("net");
 const connect = function () {
   const conn = net.createConnection({
     host: "localhost",
@@ -7,9 +7,13 @@ const connect = function () {
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
+ 
   conn.on("data", function (message) {
     console.log(`Recieved Packets:${message}`);
+    
   });
+
   return conn;
 };
+
 module.exports = connect;
